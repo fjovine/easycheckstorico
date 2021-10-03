@@ -13,9 +13,9 @@ Le informazioni relative agli esami sono scaricabili attraverso la seguente API.
 |:----|:---|
 JSONGETTEST?test={testcode} | Ritorna un JSON che contiene i parametri del codice richiesto. Il {testcode} è una stringa di formato YYYYMMDDNNN dove Y è l'anno, M il mese D il giorno e N il numero sequenziale del test nella giornata |
 |JSONGETCALENDAR| Ritorna un array JSON con i codici di tutti i test effettuati nella vita dello strumennto|
-|JSONGETCALENDAR?year={anno}|Ritorna un array JSON con i codici dei test effettuati nell'anno passato|
-|JSONGETCALENDAR?year={anno}&month={mese}|Ritorna un array JSON con i codici dei test effettuati nel mese dell'anno passato|
-|JSONGETCALENDAR?year={anno}&month={mese}&day={giorno}|Ritorna un array JSON con i codici dei test effettuati nel giorno passato|
+|JSONGETCALENDAR?year={anno}|Ritorna un array JSON con i codici dei test effettuati nell'anno passato a parametro|
+|JSONGETCALENDAR?year={anno}&month={mese}|Ritorna un array JSON con i codici dei test effettuati nel mese dell'anno passato a parametro|
+|JSONGETCALENDAR?year={anno}&month={mese}&day={giorno}|Ritorna un array JSON con i codici dei test effettuati nel giorno passato a parametro|
 |JSONLASTTEST|Ritorna il codice dell'ultimo test effettuato|
 
 Questo è un software java a riga di comando che si interfaccia allo strumento e scarica i dati usando correttamente
