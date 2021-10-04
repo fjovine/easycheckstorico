@@ -154,7 +154,9 @@ public class Easycheck {
                 error("Impossibile salvare il contenuto del file");
             }
         } else {
-            System.out.println(result);
+            if (savePath != null) {
+                System.out.println(result);
+            }
         }
 
         return result;
@@ -218,9 +220,10 @@ public class Easycheck {
      * Richiede il codice dell'ultimo test effettuato.
      * @return Il codice numerico dell'ultimo test effettuato nel formato YYYYMMDDNNN dove Y è l'anno
      * M il mese D il giorno e N il numero sequenziale del test.
+     * @param show se true, visualizza la risposta del server
      */
-    public static String ultimoEsame() {
-        String ultimoEsame = remoteQuery(getBasicUrl("JSONLASTTEST"), "ultimo.json");
+    public static String ultimoEsame(boolean show) {
+        String ultimoEsame = remoteQuery(getBasicUrl("JSONLASTTEST"), show ? "ultimo.json" : null);
         String[] lines = ultimoEsame.split("\\r?\\n");
         String lastTest = lines[1].split(":")[1].trim();
 
@@ -236,7 +239,7 @@ public class Easycheck {
             error("Non sono previsti ulteriori parametri nel comando ultimoEsame");
         }
 
-        String ultimoEsame = ultimoEsame();
+        String ultimoEsame = ultimoEsame(true);
         remoteQuery(getBasicUrl(String.format("JSONGETTEST?test=%s", ultimoEsame)), ultimoEsame + ".json");
     }
 
@@ -261,7 +264,7 @@ public class Easycheck {
      */
     public static void doAttendiTest(String[] arg)
     {
-        String primo = ultimoEsame();
+        String primo = ultimoEsame(false);
         System.out.println("Ultimo test : "+primo);
         System.out.println("In attesa del successivo");
         while (true) {
@@ -270,7 +273,7 @@ public class Easycheck {
             } catch (InterruptedException ie) {
                 break;
             }
-            if (ultimoEsame().compareTo(primo) != 0) {
+            if (ultimoEsame(false).compareTo(primo) != 0) {
                 break;
             }
         }
