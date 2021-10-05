@@ -248,11 +248,11 @@ public class Easycheck {
      * @param arg argomenti passati sulla linea di comando.
      */
     public static void doScarica(String[] arg) {
-        if (arg.length > 3) {
-            error("Il comando ultimoEsame prevede un solo parametro");
+        if (arg.length != 3) {
+            error("Il comando ultimoEsame prevede un parametro");
         }
 
-        String code = arg[3];
+        String code = arg[2];
         remoteQuery(getBasicUrl(String.format("JSONGETTEST?test=%s", code)), code+".json");
     }
 
@@ -277,6 +277,8 @@ public class Easycheck {
                 break;
             }
         }
+        String ultimo = ultimoEsame(false);
+        remoteQuery(getBasicUrl(String.format("JSONGETTEST?test=%s", ultimo)), ultimo+".json");
     }
 
     /**
