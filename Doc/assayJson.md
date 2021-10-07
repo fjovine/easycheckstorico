@@ -25,15 +25,15 @@
 |C| | | | P_TCAL_B | semplice| Coefficiente B della calibrazione termica |
 | | | | | P_TEMP_CAL | array unidimensionale|Calibrazione: temperatura letta esternamente del punto di calibrazione i-esimo. |
 | | | | | P_TEMP_RAW |strutturata |Calibrazione:temperature temperatura misurata internamente in decimi di millivolt del punto di calibrazione i-esimo. |
-| | | | | P_TIME_SHOW | semplice | Intervallo in secondi tra due letture consecutive |
-| | | | | P_TSS | | |
-| | | | | P_TS_COND |strutturata |Conducibilità misurata durante la fase isoterma senza THK |
-| | | | | P_TS_COND_T |strutturata |Conducibilità misurata durante la fase isoterma con THK |
-| | | | | P_TS_TEMP |strutturata |Temperature misurate durante la fase isoterma TS |
-| | | | | P_TS_TIME | | |
-| | | | | P_T_INIZIO | semplice| Data e ora di partenza del test nel formato "dd/MM/yy HH:mm"|
-| | | | | S_TEMP_MAX | semplice| Temperatura massima in °C per il test TS |
-| | | | | S_TEMP_MIN | semplice| Temperatura minima in °C per il test TS |
+| |I|T| | P_TIME_SHOW | integer| Intervallo in secondi tra due letture consecutive |
+| | |T| | P_TSS | float | Valore della Tss|
+| | |T| | P_TS_COND | array double |Conducibilità misurata al punto i durante la fase a temperatura cresente  del test TS senza THK |
+| | |T| | P_TS_COND_T |array double |Conducibilità misurata  al punto i durante la fase a temperatura cresente   del test TS con THK |
+| | |T| | P_TS_TEMP |array double |Temperature al punto i durante la fase a tempratura crescente del test TS. Valida per le curve di conducibilità con e senza THK |
+| | |T| | P_TS_TIME | | |
+| |I|T|A| P_T_INIZIO | string | Data e ora di partenza del test nel formato "dd/MM/yy HH:mm"|
+| | |T| | S_TEMP_MAX | float | Temperatura massima in °C per il test TS |
+| | |T| | S_TEMP_MIN | float | Temperatura minima in °C per il test TS |
 
 
 | | |T| | P_IS_LAST_TS_VALID | boolean | True se la ts calcolata è valida |
