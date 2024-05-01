@@ -34,8 +34,6 @@
 | |I|T|A| P_T_INIZIO | string | Data e ora di partenza del test nel formato "dd/MM/yy HH:mm"|
 | | |T| | S_TEMP_MAX | float | Temperatura massima in °C per il test TS |
 | | |T| | S_TEMP_MIN | float | Temperatura minima in °C per il test TS |
-
-
 | | |T| | P_IS_LAST_TS_VALID | boolean | True se la ts calcolata è valida |
 | | | | | P_IS_TCC_VALID | boolean | True se i parametri relativi alla tcc sono validi |
 | | | | | P_IS_TSS_VALID | boolean | ??? |
