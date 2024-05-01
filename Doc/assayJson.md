@@ -1,6 +1,6 @@
 ## Variabili e tipo
 
-|Cal|Iso|Ts|Ca|Identificatore || Tipo | Descrizione |
+|Cal|Iso|Ts|Ca|Identificatore | Tipo | Descrizione |
 |:--|:--|:-|:-|:--------------------|:-------|:------------------|
 |C| | | | P_CCAL_A | semplice| Coefficiente A della calibrazione di conducibilità |
 |C| | | | P_CCAL_B | semplice| Coefficiente B della calibrazione di conducibilità |
